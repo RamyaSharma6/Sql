@@ -1,0 +1,16 @@
+1.Write a query to fetch and display faculty IDsfor all students whose names starts with ‘S’. Implement the concepts using subqueries.
+
+select faculty_id,student_id from student_status where student_id in(select student_id from studentdetails where student_name like 's%');
+
+
+2.Write a query to fetch and display faculty IDs for all students who belongs location ‘Mumbai’ and name does not contains character ‘A’
+
+select faculty_id from student_status where student_id in(select student_id from studentdetails where student_location='mumbai' and student_name not like %A%);
+
+3.Write a query to fetch and display facultyID and faculty rating for the faculties who handled J2EE module.
+
+select faculty_id,faculty_rating from faculty_feedback where faculty_id in (select faculty_id from student_status where module_id='J2EE');
+
+
+
+
